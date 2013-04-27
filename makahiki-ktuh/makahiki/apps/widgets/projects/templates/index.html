@@ -8,11 +8,10 @@
                  onclick="toggleHelp(event, 'widget', 'projects'); return false;"/></a>
     </div>
     <div class="content-box-contents">
-        <b>Projects</b><br>
+        <b>Current projects:</b><br>
         {% for project in projects.projects %}
           <div><em>Title: {{ project.title }}</em></div>
           <div><i>Short description: {{ project.short_description }}</i></div>
-          <div>Project {% if not project.approved %}not yet {% endif %}approved</div>
           <br>
         {% endfor %}
         <p></p>

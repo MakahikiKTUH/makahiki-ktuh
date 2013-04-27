@@ -1,14 +1,15 @@
 """Provides the view of the widget."""
-
+import datetime
 from apps.widgets.projects.models import Project, Goal, Comment
 from apps.widgets.projects.forms import ProjectForm
+from apps.widgets.projects import projects
 
 def supply(request, page_name):
     """ supply view_object content, which is the projects for this game."""
     
-    projects = Project.objects.filter(approved=True)
-    goals = Goal.objects.all()
-    comments = Comment.objects.all()
+    projects = list(Project.objects.filter(status="Approved"))
+    goals = list(Goal.objects.all())
+    comments = list(Comment.objects.all())
     
     if request.method == 'POST':
         form = ProjectForm(request.POST)
@@ -16,8 +17,9 @@ def supply(request, page_name):
             p = Project(title = form.cleaned_data['title'],
                         short_description = form.cleaned_data['short_description'],
                         long_description = form.cleaned_data['long_description'],
-                        max_number_of_members = form.cleaned_data['max_number_of_members']
+                        number_of_members = form.cleaned_data['number_of_members'],
             )
+            p.deadline = datetime.datetime.today()
             p.save()
     else:
         form = ProjectForm()
@@ -30,4 +32,3 @@ def supply(request, page_name):
         "comments": comments,
         "form": form,
         }
-
