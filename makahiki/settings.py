@@ -201,6 +201,7 @@ INSTALLED_WIDGET_APPS = (
     'raffle',
     'scoreboard',
     'participation',
+    'projects',
     'smartgrid',
     'smartgrid_library',
     'smartgrid_design',

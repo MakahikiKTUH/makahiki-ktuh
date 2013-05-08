@@ -1,0 +1,33 @@
+{% with projects=view_objects.projects %}
+<div id="projects-list" class="content-box">
+    <div class="content-box-title">
+        <h3>Game of Projects</h3>
+        <a href="#" style="float: right">
+            <img src="{{ STATIC_URL}}images/icons/icon-help-sm.png" width="20"
+                 title="Click to get help about this window"
+                 onclick="toggleHelp(event, 'widget', 'projects'); return false;"/></a>
+    </div>
+    <div class="content-box-contents">
+        <b><font size="2.0ems">Current projects:</font></b><br>
+        {% for project in projects.projects %}
+          <div><strong>Project name:</strong> {{ project.title }}</div>
+          <div><strong>Short description:</strong> {{ project.short_description }}</div>
+          <div><strong>Goals:</strong><br>
+              <ol>{% for goal in project.goal_set.all %}
+                <li>{{ goal.text }}, <small><font color="666666">due {{ goal.deadline }}</font></small>
+              </ol>{% endfor %}
+          </div>
+          <div><strong>Comments:</strong><br>
+              <ol>{% for comment in project.comment_set.all %}
+                <li>{{ goal.text }}, <small><font color="666666">due {{ goal.deadline }}</font></small>
+              </ol>{% endfor %}
+          </div>
+          <br>
+        {% endfor %}
+        <hr>    
+        <div>
+            {% include "create_project.html" with form=projects.form gforms=projects.gforms %}
+        </div>
+    </div>
+</div>
+{% endwith %}
