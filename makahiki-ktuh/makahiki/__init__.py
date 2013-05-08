@@ -1,1 +1,0 @@
-"""Makahiki package"""

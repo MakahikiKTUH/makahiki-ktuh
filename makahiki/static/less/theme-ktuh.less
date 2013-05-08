@@ -1,0 +1,158 @@
+ /*
+ * KTUH Makahiki Theme
+ * 
+ * @author Ray Reyes
+ * 
+ * Uses Twitter Bootstrap v2.
+ */
+ 
+// makahiki base style
+@import "makahiki.less";
+
+// Bootstrap color variables
+@black:                 #000;
+@grayDarker:            #222;
+@grayDark:              #333;
+@gray:                  #555;
+@grayLight:             #999;
+@grayLighter:           #eee;
+@white:                 #fff;
+@blue:                  #049cdb;
+@blueDark:              #0064cd;
+@green:                 #46a546;
+@red:                   #9d261d;
+@yellow:                #ffc40d;
+@orange:                #f89406;
+@pink:                  #c3325f;
+@purple:                #7a43b6;
+
+// Forest color palette
+@forest-white:          #E9F2E4;
+@forest-brightgreen:    #86B04C;
+@forest-tan:            #A89B83;
+@forest-lighttan:       #EBE8B9;
+@forest-green:          #82A367;
+@forest-gold:           #A18E4A;
+@forest-purple:         #916981;
+@forest-brown:          #635A49;
+@forest-darkgreen:      #182608;
+@forest-sgg-blue:       #671BE0;
+@forest-sgg-orange:     #A33B0F;
+@forest-sgg-green:      #7E9C08;
+@forest-sgg-purple:     #A13B9D;
+@forest-sgg-aqua:       #399E99;
+@forest-sgg-darkaqua:   #074263;
+
+
+// Theme stylable elements
+@use-bkg-image: true;
+//@page-bkg-color-start: @forest-tan; 
+//@page-bkg-color-end: lighten(@forest-tan, 10%); 
+@page-bkg-image: "../images/ktuh-theme-background.jpg";
+@page-font-color: @black;
+@page-link-color: @orange;
+
+// Questbar
+@questbar-bkg-color-start: lighten(@gray, 0%);
+@questbar-bkg-color-end: lighten(@questbar-bkg-color-start, 30%);
+@questbar-font-color: @white;
+@questbar-transparency: 30%;
+
+// Navbar
+@navbar-bkg-color-start: @forest-sgg-orange;
+@navbar-bkg-color-end: lighten(@navbar-bkg-color-start, 30%);
+@navbar-font-color: @grayLighter;
+@navbar-curr-page-bkg-color: @navbar-bkg-color-end;
+@navbar-curr-path-font-color: lighten(@forest-white, 20%);
+@navbar-transparency: 30%;
+
+// Infobar
+@infobar-bkg-color-start: @gray;
+@infobar-bkg-color-end: lighten(@infobar-bkg-color-start, 10%);
+@infobar-font-color: @white;
+@infobar-feedback-button-bkg-color-start: darken(@infobar-bkg-color-start, 20%); 
+@infobar-feedback-button-bkg-color-end: darken(@infobar-bkg-color-start, 10%); 
+@infobar-feedback-button-font-color: @white;
+@infobar-transparency: 5%;
+
+// Notifications
+@notification-bkg-color-start: lighten(@gray, 20%);
+@notification-bkg-color-end: lighten(@gray, 20%);
+@notification-font-color: @white;
+@notification-transparency: 45%;
+
+// Modal dialog box 
+@modal-title-bkg-color-start: @gray;
+@modal-title-bkg-color-end: lighten(@modal-title-bkg-color-start, 20%);
+@modal-title-font-color: @white;
+@modal-body-bkg-color: @gray;
+@modal-body-font-color: @white;
+
+// Page infobox
+@pageinfobox-bkg-color-start: lighten(@gray, 0%);
+@pageinfobox-bkg-color-end: lighten(@questbar-bkg-color-start, 30%);
+@pageinfobox-font-color: @white;
+@pageinfobox-header-font-color: @white;
+@pageinfobox-transparency: 0%;
+
+// Widgets
+@widget-title-bkg-color-start: @grayLight;
+@widget-title-bkg-color-end: @grayLight;
+@widget-title-font-color: @white;
+@widget-title-transparency: 25%;
+@widget-body-bkg-color: @gray;
+@widget-body-font-color: @white;
+@widget-body-transparency: 25%;
+@widget-button-bkg-color-start: lighten(@widget-body-bkg-color, 30%);
+@widget-button-bkg-color-end: lighten(@widget-body-bkg-color, 30%);
+@widget-button-font-color: @white; 
+@widget-table-row-color-1: @widget-body-bkg-color;
+@widget-table-row-color-2: @grayLight;
+@widget-subtitle-bkg-color: @grayLight;
+@widget-subtitle-font-color: @white;
+
+@widget-text-area-bkg-color: @forest-white;
+@widget-text-area-font-color: @black;
+
+// Smart grid game
+@sgg-header-bkg-color: @forest-white;
+@sgg-header-font-color: @black;
+@sgg-entry-font-color: @black;
+@sgg-activity-cell-bkg-color: @forest-sgg-green;
+@sgg-commitment-cell-bkg-color: @forest-sgg-orange;
+@sgg-event-cell-bkg-color: @forest-sgg-aqua;
+@sgg-excursion-cell-bkg-color: @forest-sgg-purple;
+@sgg-filler-cell-bkg-color: @forest-tan;
+
+// Prizes
+@prizes-raffle-table-entry-color: @forest-brown;
+@prizes-raffle-ticket-font-color: @white;
+
+// My Info
+@myinfo-textarea-highlight-color: darken(@widget-body-bkg-color, 20%);
+
+// Badges
+@badge-theme-1-bkg-color-start: @forest-brightgreen;
+@badge-theme-1-bkg-color-end: @forest-darkgreen;
+@badge-theme-1-text-color: @forest-white;       
+
+@badge-theme-2-bkg-color-start: @forest-gold;
+@badge-theme-2-bkg-color-end: @forest-sgg-purple;
+@badge-theme-2-text-color: @forest-white;
+
+@badge-theme-3-bkg-color-start: @forest-white;
+@badge-theme-3-bkg-color-end: @forest-white;
+@badge-theme-3-text-color: @forest-sgg-aqua;
+
+@badge-theme-4-bkg-color-start: @forest-sgg-aqua;
+@badge-theme-4-bkg-color-end: @forest-darkgreen;
+@badge-theme-4-text-color: @forest-white;
+
+@badge-theme-5-bkg-color-start: @forest-sgg-orange;
+@badge-theme-5-bkg-color-end: @forest-sgg-blue;
+@badge-theme-5-text-color: @forest-white;
+
+@badge-theme-summary-bkg-color-start: @forest-white;
+@badge-theme-summary-bkg-color-end: @forest-white;
+@badge-theme-summary-text-color: @forest-darkgreen;
+

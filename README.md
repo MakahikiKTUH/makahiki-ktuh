@@ -1,2 +1,1 @@
-makahiki-ktuh
-=============
+Documentation: http://makahiki.readthedocs.org

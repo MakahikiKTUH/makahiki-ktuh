@@ -1,1 +1,0 @@
-"""smartgrid test module"""
